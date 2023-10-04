@@ -23,6 +23,7 @@
             android:layout_marginTop="48dp"
             android:layout_marginBottom="16dp"
             app:srcCompat="@drawable/shr_logo"
+            app:tint="?android:attr/textColorPrimary"
             android:contentDescription="@string/shr_logo_content_description"  />
 
         <TextView
@@ -37,6 +38,7 @@
        <com.google.android.material.textfield.TextInputLayout
            android:layout_width="match_parent"
            android:layout_height="wrap_content"
+           style="@style/Widget.Shrine.TextInputLayout"
            android:layout_margin="@dimen/shr_margin_tiny"
            android:hint="@string/shr_hint_username">
 
@@ -50,6 +52,7 @@
             android:id="@+id/password_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="@style/Widget.Shrine.TextInputLayout"
             android:layout_margin="@dimen/shr_margin_tiny"
             android:hint="@string/shr_hint_password"
             app:errorEnabled="true">
@@ -70,6 +73,7 @@
                android:id="@+id/next_button"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
+               style="@style/Widget.Shrine.Button"
                android:layout_alignParentEnd="true"
                android:layout_alignParentRight="true"
                android:text="@string/shr_button_next"/>
@@ -78,7 +82,7 @@
                android:id="@+id/cancel_button"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
-               style="@style/Widget.MaterialComponents.Button.TextButton"
+               style="@style/Widget.Shrine.Button.TextButton"
                android:layout_toStartOf="@+id/next_button"
                android:layout_toLeftOf="@+id/next_button"
                android:text="@string/shr_button_cancel"/>
