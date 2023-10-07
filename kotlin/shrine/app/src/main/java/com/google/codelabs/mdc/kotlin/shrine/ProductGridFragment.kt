@@ -1,17 +1,20 @@
 package com.google.codelabs.mdc.kotlin.shrine
 
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.codelabs.mdc.kotlin.shrine.network.ProductEntry
 import com.google.codelabs.mdc.kotlin.shrine.staggeredgridlayout.StaggeredProductCardRecyclerViewAdapter
 import kotlinx.android.synthetic.main.shr_product_grid_fragment.view.app_bar
+import kotlinx.android.synthetic.main.shr_product_grid_fragment.view.product_grid
 import kotlinx.android.synthetic.main.shr_product_grid_fragment.view.recycler_view
 
 class ProductGridFragment : Fragment() {
@@ -25,6 +28,11 @@ class ProductGridFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.shr_product_grid_fragment, container, false)
         (activity as MainActivity).setSupportActionBar(view.app_bar)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            view.product_grid.background = ContextCompat.getDrawable(requireContext(), R.drawable.shr_product_grid_background_shape)
+        }
+
         initList(view)
         return view
     }
