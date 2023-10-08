@@ -34,7 +34,11 @@ class ProductGridFragment : Fragment() {
             view.product_grid.background = ContextCompat.getDrawable(requireContext(), R.drawable.shr_product_grid_background_shape)
         }
 
-        view.app_bar.setNavigationOnClickListener(NavigationIconClickListener(requireActivity(), view.product_grid, AccelerateDecelerateInterpolator()))
+        view.app_bar.setNavigationOnClickListener(NavigationIconClickListener(
+            requireActivity(), view.product_grid,
+            AccelerateDecelerateInterpolator(),
+        ContextCompat.getDrawable(requireContext(), R.drawable.shr_branded_menu),
+        ContextCompat.getDrawable(requireContext(), R.drawable.shr_close_menu)))
 
         initList(view)
         return view
