@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -32,6 +33,8 @@ class ProductGridFragment : Fragment() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             view.product_grid.background = ContextCompat.getDrawable(requireContext(), R.drawable.shr_product_grid_background_shape)
         }
+
+        view.app_bar.setNavigationOnClickListener(NavigationIconClickListener(requireActivity(), view.product_grid, AccelerateDecelerateInterpolator()))
 
         initList(view)
         return view
